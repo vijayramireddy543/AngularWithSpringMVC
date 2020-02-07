@@ -13,7 +13,7 @@
     <artifactId>angular.mvc</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>AngularSpringMVC</name>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -68,7 +68,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>1.6</version>
                 <configuration>
-                    <workingDirectory>../angular-app</workingDirectory>
+                    <workingDirectory>src/main/webapp/angular-app</workingDirectory>
                     <installDirectory>temp</installDirectory>
                 </configuration>
                 <executions>
