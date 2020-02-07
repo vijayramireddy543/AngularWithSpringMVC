@@ -7,7 +7,7 @@
 </label>
 
 <p>
-  Value: {{ formData.firstName }}
+  Value: {{ formData }}
 </p>
 
 <p>
@@ -17,13 +17,18 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
   <label>
-    First Name:
-    <input type="text" formControlName="firstName">
+    Name:
+    <input type="text" formControlName="name">
   </label>
 
   <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
+    ID:
+    <input type="text" formControlName="id">
+  </label>
+
+  <label>
+    Phone Number:
+    <input type="text" formControlName="phoneNumber">
   </label>
 
   <button type="submit" [disabled]="!profileForm.valid">Submit</button>
