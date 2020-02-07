@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ClickComponent } from './components/click/click.component';
 import { UserProfileEditorComponent } from './components/user-profile-editor/user-profile-editor.component';
+import { UserService } from './shared/services/user.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { UserProfileEditorComponent } from './components/user-profile-editor/use
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

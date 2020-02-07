@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../shared/interfaces';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-click',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClickComponent implements OnInit {
 
-  constructor() { }
+  users: User[];
 
-  ngOnInit() {
-  }
+      constructor(private userService: UserService) {
+      }
+
+      ngOnInit() {
+        this.userService.findAll().subscribe(data => {
+          this.users = data;
+        });
+      }
 
 }
